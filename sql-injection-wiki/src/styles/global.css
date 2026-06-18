@@ -1,0 +1,137 @@
+/* ============================================================
+   GLOBAL — Reset, variables, tipografía y fondo base
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ----- TEMA OSCURO (por defecto) ----- */
+:root,
+:root[data-theme='dark'] {
+  --bg-0: #0b1220;          /* fondo más oscuro */
+  --bg-1: #0f172a;          /* fondo de la app */
+  --bg-2: #1e293b;          /* tarjetas / sidebar */
+  --bg-3: #243149;          /* hover */
+
+  --line: #2c3a55;          /* bordes sutiles */
+  --line-strong: #3b4d72;
+
+  --text: #e2e8f0;
+  --text-soft: #cbd5e1;
+  --text-muted: #94a3b8;
+  --text-dim: #64748b;
+
+  --accent-1: #10b981;
+  --accent-1-soft: #34d399;
+  --accent-2: #3b82f6;
+  --accent-2-soft: #60a5fa;
+
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #38bdf8;
+
+  --shadow-sm: 0 2px 6px rgba(0, 0, 0, .25);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, .35);
+  --shadow-glow: 0 0 0 3px rgba(52, 211, 153, .18);
+
+  --code-bg: #0a1325;
+  --code-text: #e2e8f0;
+  --tooltip-bg: #0a1325;
+
+  --grid-illustration-opacity: 1;
+}
+
+/* ----- TEMA CLARO ----- */
+:root[data-theme='light'] {
+  --bg-0: #f1f5f9;
+  --bg-1: #ffffff;
+  --bg-2: #f8fafc;
+  --bg-3: #e2e8f0;
+
+  --line: #d6e0ec;
+  --line-strong: #b6c4d6;
+
+  --text: #0f172a;
+  --text-soft: #334155;
+  --text-muted: #64748b;
+  --text-dim: #94a3b8;
+
+  --accent-1: #059669;
+  --accent-1-soft: #10b981;
+  --accent-2: #2563eb;
+  --accent-2-soft: #3b82f6;
+
+  --success: #16a34a;
+  --warning: #d97706;
+  --danger: #dc2626;
+  --info: #0284c7;
+
+  --shadow-sm: 0 2px 6px rgba(15, 23, 42, .08);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, .12);
+  --shadow-glow: 0 0 0 3px rgba(16, 185, 129, .25);
+
+  --code-bg: #f1f5f9;
+  --code-text: #0f172a;
+  --tooltip-bg: #0f172a;
+
+  --grid-illustration-opacity: .9;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--text);
+  background:
+    radial-gradient(1200px 600px at -10% -10%, rgba(16, 185, 129, .12), transparent 60%),
+    radial-gradient(1000px 500px at 110% 0%, rgba(59, 130, 246, .12), transparent 60%),
+    var(--bg-1);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+a {
+  color: var(--accent-2);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--font-mono);
+}
+
+h1, h2, h3, h4 {
+  margin: 0 0 .4em;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+p {
+  line-height: 1.6;
+  color: var(--text-soft);
+}
+
+/* Animaciones suaves reutilizables */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in {
+  animation: fade-up .35s ease both;
+}
